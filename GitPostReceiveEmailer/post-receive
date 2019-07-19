@@ -1,0 +1,4 @@
+﻿#!/bin/sh
+read oldrev newrev ref to
+	
+C:/GitPostReceiveEmailer.exe $oldrev $newrev $ref
