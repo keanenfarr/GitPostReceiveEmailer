@@ -6,6 +6,12 @@ namespace GitPostReceiveEmailer
 {
     public class CommitFactory : ICommitFactory
     {
+        /// <summary>
+        /// Generates a Commit object based on information about the repository and commit.
+        /// </summary>
+        /// <param name="repository">A LibGit2Sharp.Repository object containing information about a repository.</param>
+        /// <param name="commitSha">The sha of the commit itself.</param>
+        /// <returns></returns>
         public Commit Create(Repository repository, string commitSha)
         {
             //Most of this code comes from https://github.com/jakubgarfield/Bonobo-Git-Server

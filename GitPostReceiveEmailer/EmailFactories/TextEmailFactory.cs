@@ -8,6 +8,11 @@ namespace GitPostReceiveEmailer
 {
     public class TextEmailGenerator : IEmailGenerator
     {
+        /// <summary>
+        /// Creates a formatted string that is suitable to send in an email with information from the model.
+        /// </summary>
+        /// <param name="model">A Commit model.</param>
+        /// <returns></returns>
         public string CreateEmailText(Commit model)
         {
             var sb = new StringBuilder();
