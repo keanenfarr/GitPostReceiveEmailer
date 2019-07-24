@@ -5,7 +5,7 @@ After not finding a good solution, I thought I'd make my own.
 
 This is a .NET Core app that runs on Windows and doesn't need anything else installed on the server.  In my case, I just needed to install Bonobo Git Server and this program.
 
-#Installation Instructions
+# Installation Instructions
 
 1. Copy the post-receive file to the hooks directory in your repository.
 
