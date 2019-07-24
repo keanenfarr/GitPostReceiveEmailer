@@ -5,8 +5,9 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <Authors>Keanen Farr</Authors>
     <Company />
-    <StartupObject>GitPostReceiveEmailer.Program</StartupObject>
+    <StartupObject></StartupObject>
     <Version>0.0.1</Version>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

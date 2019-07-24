@@ -14,6 +14,7 @@ namespace GitPostReceiveEmailer
         {
             var config = new Configuration()
             {
+                From = new EmailAddress(),
                 To = new List<EmailAddress>(),
                 CC = new List<EmailAddress>(),
                 BCC = new List<EmailAddress>(),
@@ -38,6 +39,17 @@ namespace GitPostReceiveEmailer
             var to = configuration.GetSection("ToEmailAddresses").Value;
             var cc = configuration.GetSection("CCEmailAddresses").Value;
             var bcc = configuration.GetSection("BCCEmailAddresses").Value;
+
+            var smtpSection = configuration.GetSection("Smtp");
+            config.SMTPHost = smtpSection.GetSection("Server").Value;
+
+            var port = 0;
+
+            int.TryParse(smtpSection.GetSection("Port").Value, out port);
+
+            config.Port = port;
+            config.SMTPUsername = smtpSection.GetSection("Username").Value;
+            config.SMTPPassword = smtpSection.GetSection("Password").Value;
 
             if (!string.IsNullOrEmpty(from))
             {
