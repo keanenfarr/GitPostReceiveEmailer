@@ -217,7 +217,7 @@ namespace GitPostReceiveEmailer
 
         string HtmlEncode(string s)
         {
-            return s.Replace("<", "&lt;").Replace(">", "&gt;").Replace("\r\n", "<br />").Replace("\n", "<br />");
+            return s.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;").Replace("\r\n", "<br />").Replace("\n", "<br />").Replace("  ", "&nbsp;&nbsp;");
         }
     }
 }
