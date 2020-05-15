@@ -1,5 +1,6 @@
 ﻿using MailKit.Net.Smtp;
 using MimeKit;
+using System;
 
 namespace GitPostReceiveEmailer
 {
@@ -46,9 +47,16 @@ namespace GitPostReceiveEmailer
 
                 using (var client = new SmtpClient())
                 {
-                    client.ServerCertificateValidationCallback = (s, c, h, e) => true;
-
-                    client.Connect(config.SMTPHost, config.Port, false);
+                    if (config.Port == 25)
+                    {
+                        client.ServerCertificateValidationCallback = (s, c, h, e) => false;
+                        client.Connect(config.SMTPHost, config.Port, MailKit.Security.SecureSocketOptions.None);
+                    }
+                    else
+                    {
+                        client.ServerCertificateValidationCallback = (s, c, h, e) => true;
+                        client.Connect(config.SMTPHost, config.Port, MailKit.Security.SecureSocketOptions.Auto);
+                    }
 
                     if (!string.IsNullOrEmpty(config.SMTPUsername))
                     {

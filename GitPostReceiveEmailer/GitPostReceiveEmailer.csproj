@@ -14,8 +14,8 @@
 
   <ItemGroup>
     <PackageReference Include="LibGit2Sharp" Version="0.26.2" />
-    <PackageReference Include="MailKit" Version="2.5.1" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.2" />
+    <PackageReference Include="MailKit" Version="2.6.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.4" />
   </ItemGroup>
 
   <ItemGroup>
